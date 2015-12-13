@@ -1,6 +1,9 @@
 ---
-title: Contact
+title: contact
 ---
 
-I live in a small hut in the mountains of Kumano Kodō on Kii Hantō and would not
-like to be contacted.
+<section id="contact">
+* [Github](https://github.com/limdauto/)
+* [StackOverflow](http://stackoverflow.com/users/1684058/lim-h)
+* [Email](mailto:limdauto@gmail.com)
+</section>
