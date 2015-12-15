@@ -1,5 +1,6 @@
 ---
 title: Reflection on Brent Yorgey's Haskell Class
+tags: haskell
 ---
 
 I have just finished working through [Brent Yorgey's Haskell class](http://www.seas.upenn.edu/~cis194/spring13/). Although I skipped one week on I/O, or rather I switched to some other exercises, because I disliked that particular assignment, I have to say this is probably the best free Haskell guide for beginners on the Internet.

@@ -1,10 +1,11 @@
 ---
 title: Halfway Review of Coursera Big Data Analytics Specialization
+tags: coursera, big data
 ---
 
 I always try my best to stay away from public rant because it is the least effective form of communication. But this one deserves it.
 
-I have always LOVED Coursera. My very first MOOC experience was with the second iteration of Introduction to Functional Programming in Scala a few years back. What a treat! Taught by Martin Odersky himself and moderated by a tech lead at Typesafe, it was the pinnacle of online education: good content, vibrant community and very on-point guidance in the form of solid exercises as well as engaging forum discussions. Over the years, I have audited quite a few more courses offered by the company's partners, all with overwhelmingly positive experience. So this is not about Coursera; this is about their new Big Data specialization.
+I have always LOVED Coursera. My very first MOOC experience was with the second iteration of Introduction to Functional Programming in Scala a few years back. What a treat! Taught by Martin Odersky himself and moderated by a tech lead at Typesafe, it was the pinnacle of online education: good content, vibrant community and very on-point guidance in the form of solid exercises as well as engaging forum discussions. Over the years, I have audited quite a few more courses offered by the company's partners, all with overwhelmingly positive experience. So this is not about Coursera; this is about their new [Big Data specialization](https://www.coursera.org/specializations/big-data).
 
 I am genuinely interested in this specialization because of the Graph Analytics in Big Data course for which I am having immediate need. Given that this program is designed by the Super Computing center at UCSD and marketed as "hands-on, practical", I was justifiably having high expectations, especially for exciting real-world giant-scale data examples. Maybe I shouldn't have because it makes the disappointment a lot worse.
 
@@ -35,4 +36,8 @@ The worst part, though, is the video content itself. I can overlook badly produc
 In conclusion, I am staying till the end because I am halfway through and I still need to figure out that Graph Analytics stuff.
 But I will need serious convincing if Coursera ever tries to sell me their specialization again.
 It's exactly like buying a ridiculously overpriced, badly written book.
+</p>
+
+<p style="text-align:right">
+*Originally published on [LinkedIn](https://www.linkedin.com/pulse/halfway-review-coursera-big-data-analytics-nghia-hoang)*
 </p>

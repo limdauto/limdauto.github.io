@@ -536,7 +536,7 @@ blockquote em:before {
 .typl8-pull-quote:after {
   content: '”';
   bottom: 0;
-  right: 0;
+  right: 10px;
 }
 
 
