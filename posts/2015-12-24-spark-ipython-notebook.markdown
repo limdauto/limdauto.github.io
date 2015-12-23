@@ -152,7 +152,7 @@ using a spark package called [Spark-Redshift](https://github.com/databricks/spar
 {
     ...
     "env": {
-        "PYSPARK_SUBMIT_ARGS": "--jars </path/to/redshift/jdbc.jar> --packages com.databricks:spark-redshift_2.10:0.5.2,com.amazonaws:aws-java-sdk-pom:1.10.34,org.apache.hadoop:hadoop-awes:2.6.0 pyspark-shell"
+        "PYSPARK_SUBMIT_ARGS": "--jars </path/to/redshift/jdbc.jar> --packages com.databricks:spark-redshift_2.10:0.5.2,com.amazonaws:aws-java-sdk-pom:1.10.34,org.apache.hadoop:hadoop-aws:2.6.0 pyspark-shell"
     }
     ...
 }
