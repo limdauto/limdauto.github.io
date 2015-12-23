@@ -62,7 +62,7 @@ The goal is to have a startup file for this profile so that everytime you launch
 it loads the spark context for you.
 
 ```lang-bash
-$ touch ~/.ipython/profile_spark/startup/00-sg4park-setup.py
+$ touch ~/.ipython/profile_spark/startup/00-park-setup.py
 ```
 
 A minimal working version of this file is
