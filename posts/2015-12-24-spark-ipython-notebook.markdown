@@ -43,8 +43,8 @@ $ echo "export SPARK_HOME='/usr/local/Cellar/apache-spark/1.5.2/libexec/'" >> ~/
 
 ### <a name="with-ipython"></a> II. PySpark with IPython Shell
 
-The following is adapted from [Cloudera](http://blog.cloudera.com/blog/2014/08/how-to-use-ipython-notebook-with-apache-spark/),
-which removes some unncessary steps if you just want to get up and running very quickly.
+The following is adapted from [Cloudera](http://blog.cloudera.com/blog/2014/08/how-to-use-ipython-notebook-with-apache-spark/).
+I have removed some unnecessary steps if you just want to get up and running very quickly.
 
 #### 1. Step 1: Create an ipython profile
 
@@ -92,20 +92,20 @@ You should see a welcome screen similar to this with the SparkContext object pre
 
 After getting spark to work with IPython interactive shell, the next step is to get it to work with the Jupyter Notebook.
 Unfortunately, since [the big split](http://blog.jupyter.org/2015/04/15/the-big-split/), Jupyter Notebook doesn't support IPython profile out of the box
-anymore. To reuse the profile we created earlier, we are going to provide a modified kernel [IPython kernel](http://ipython.readthedocs.org/en/stable/development/kernels.html)
+anymore. To reuse the profile we created earlier, we are going to provide a modified [IPython kernel](http://ipython.readthedocs.org/en/stable/development/kernels.html)
 for any spark-related notebook. The strategy is described [here](http://thepowerofdata.io/configuring-jupyteripython-notebook-to-work-with-pyspark-1-4-0/) but
 it has some unnecessary boilerplates/outdated information, so here is an improved version:
 
 #### 1. Preparing the kernel spec
 
-IPython kernel specs reside in `~/.ipython/kernels`, so let's create the spec for spark
+IPython kernel specs reside in `~/.ipython/kernels`, so let's create a spec for spark:
 
 ```lang-bash
 $ mkdir -p ~/.ipython/kernels/spark
 $ touch ~/.ipython/kernels/spark/kernel.json
 ```
 
-with the following content
+with the following content:
 
 ```lang-js
 {
@@ -122,8 +122,7 @@ with the following content
 }
 ```
 
-Some notes:
-- If you are using a virtual environment, change the python entry point to your virtualenvironment's,
+Some notes: If you are using a virtual environment, change the python entry point to your virtualenvironment's,
 e.g. mine is `~/.virtualenvs/machine-learning/bin/python`
 
 #### 2. Profit
