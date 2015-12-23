@@ -326,17 +326,23 @@ pre code {
   word-wrap: normal;
   white-space: -moz-pre-wrap;
   white-space: pre-wrap;
+  font-size: 1rem;
 }
 
 pre {
   white-space: pre;
+  margin-bottom: 1.5rem !important;
 }
 
 code {
   white-space: pre;
   font-family: monospace;
+  color: #d94426;
 }
 
+pre + h3 {
+  margin-top: 1.5rem;
+}
 
 /**
  *
@@ -461,7 +467,7 @@ blockquote {
   -moz-box-shadow: 0 0 1px rgba(255,255,255,0.75);
   -ms-box-shadow: 0 0 1px rgba(255,255,255,0.75);
   -o-box-shadow: 0 0 1px rgba(255,255,255,0.75);
-  padding: 1.65rem 1.65rem 0;
+  padding: 1rem 1.65rem 0;
   margin: 1.2rem auto 1.2rem;
   border-radius: 0.333333em;
   -moz-border-radius: 0.333333em;
@@ -494,6 +500,10 @@ blockquote em {
 
 blockquote em:before {
   content: "-"; /* "-" is your citation flourish */
+}
+
+blockquote + h3 {
+  margin-top: 1em;
 }
 
 
