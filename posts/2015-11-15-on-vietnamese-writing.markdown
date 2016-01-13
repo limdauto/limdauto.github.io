@@ -51,8 +51,8 @@ In my opinion, we are, unfortunately, a people who define ourselves not by who w
 *Originally published on [Quora](http://qr.ae/RbzzrH)*
 </p>
 
-[^1] http://www.archives.gov.vn/Pages/Tin%20chi%20ti%E1%BA%BFt.aspx?itemid=99&listId=c2d480fb-e285-4961-b9cd-b018b58b22d0&ws=content/
-[^2] https://stat.mq.edu.au/wp-content/uploads/2014/05/Literacy_in_Vietnam_-_an_atlas.pdf
-[^3] www.populstat.info/Asia/vietnamc.htm
-[^4] There is no reference per se but Bảo Đại was known, at least to me, as Hoàng Đế ăn chơi (the emperor of luxuriously living?)
-[^5] https://vi.wikipedia.org/wiki/B%C3%ACnh_d%C3%A2n_h%E1%BB%8Dc_v%E1%BB%A5#cite_note-3
+[^1]: [http://www.archives.gov.vn](http://www.archives.gov.vn/Pages/Tin%20chi%20ti%E1%BA%BFt.aspx?itemid=99&listId=c2d480fb-e285-4961-b9cd-b018b58b22d0&ws=content/)
+[^2]: [https://stat.mq.edu.au/](https://stat.mq.edu.au/wp-content/uploads/2014/05/Literacy_in_Vietnam_-_an_atlas.pdf)
+[^3]: [www.populstat.info/Asia/vietnamc.htm](www.populstat.info/Asia/vietnamc.htm)
+[^4]: There is no reference per se but Bảo Đại was known, at least to me, as Hoàng Đế ăn chơi (the emperor of luxuriously living?)
+[^5]: [https://vi.wikipedia.org/wiki/](https://vi.wikipedia.org/wiki/B%C3%ACnh_d%C3%A2n_h%E1%BB%8Dc_v%E1%BB%A5#cite_note-3)
