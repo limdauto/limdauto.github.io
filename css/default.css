@@ -58,3 +58,11 @@ section#intro {
 section #contact {
     margin-left: 250px;
 }
+
+.footnotes {
+    font-size: 14px;
+}
+
+.footnotes li p {
+    margin-bottom: 0px;
+}
