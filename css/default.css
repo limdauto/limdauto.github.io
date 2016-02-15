@@ -66,3 +66,8 @@ section #contact {
 .footnotes li p {
     margin-bottom: 0px;
 }
+
+code[class*="language-"],
+pre[class*="language-"] {
+    font-size: 80%;
+}
