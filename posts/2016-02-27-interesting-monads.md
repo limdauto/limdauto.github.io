@@ -1,5 +1,5 @@
 ---
-title: Next Stop: Interesting Monads
+title: Next Stop, Interesting Monads
 tags: haskell
 ---
 
