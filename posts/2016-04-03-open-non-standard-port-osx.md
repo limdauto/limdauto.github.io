@@ -9,4 +9,4 @@ an Elasticsearch container running inside your Macbook for later analysis. To ac
 allow incoming requests from the sensor on port 9200 (the default Elasticsearch port) and route it to the container. Fortunately, from OSX 10.7 onwards,
 this task is trivial with the help of a powerful tool called `pf`, which stands for Packet Filter, originated from FreeBSD.
 
-[To be updated. Too upset to write right now]
+[To be updated]
