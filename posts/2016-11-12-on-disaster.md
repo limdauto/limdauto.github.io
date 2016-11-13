@@ -1,0 +1,38 @@
+---
+title: On disaster: what doesn't kill you make you grateful
+tags: tech, disaster, work
+---
+
+And yea, stronger too. Happy now, Kelly Clarkson?
+
+It's quite hard to believe that in a week when Mr. Donald J. Trump got elected as the next US president and a tram crashed in Croydon, I still manage to keep my mind occupied with another disaster. Unlike the other two, though, mine has a happy ending. 
+
+Around 5pm UTC last Sunday, one of the most frequently accessed MySQL tables [at the company where I work](https://www.memrise.com) reached MAXINT for the primary key column. 4294967295 to be exact. Our master database in a master-slave setup quickly got out of service from all those blocked INSERT statements. 5 minutes after we performed a failover in an attempt to keep the service alive, the slave databases died as well. So *tl;dr*: for a short two-hour period which felt like an eternity in the attention span of users who are accustomed to SaaS with 99.999% uptime, we had no database, no website and no app. To top it off, it was the beginning of my CTO's one-week holiday. The guy works 25/7/(365-7) -- I kid you not -- and this happens at 5pm on the Sunday right before his time off. We were also planning to release this big, awesome feature that had been in the oven for 2 months on the following Monday. Talk about ridiculous timing.
+
+Needless to say, I have learned a lot in the firefighting and recovering process. All of the following is my own personal takeaways and not a reflection of my employer's opinion.
+
+## 1. Technical lessons
+
+- Database management is hard. This meltdown came as a surprise as we just migrated this table in June and there were **only** approximately a billion rows back then. I wish there has been an exponential growth in our user base but there hasn't. As it turns out, [upserting in MySQL with InnoDB storage causes gaps to improve concurrency](http://stackoverflow.com/questions/3679611/mysql-upsert-and-auto-increment-causes-gaps). Ha! Good to know, indeed.
+
+- Redundancy, high availability and scalabity are extremely hard to achieve. Although the Multi A-Z MySQL deployment on RDS supports many techniques out of the box, as we learned first hand, it's tricky and by no means bullet-proof. The fact was we were stuck for another 48 hours without a working slave due to the lack of progress transparency in RDS, which I will get to in a bit. Details [here](https://forums.aws.amazon.com/thread.jspa?threadID=242708&tstart=0) if anyone is interested.
+
+- Managed database services such as RDS are convenient until they are not. And when they are not, they tend to get in the way. Our hands were tied together like a constrictor knot because we didn't know how long many simple RDS operations would take. Case in point: the first replica we spinned up took more than 50 hours to get into the "available" state. On the other hand, we couldn't try any known technique that requires shell access to rescue the broken replicas. Case in point #2: our replicas were broken with the error:
+
+> 'Client requested master to start replication from position > file size; the first event 'mysql-bin-changelog.239874' at 492725, the last event read from '/rdsdbdata/log/binlog/mysql-bin-changelog.239874' at 4, the last byte read from '/rdsdbdata/log/binlog/mysql-bin-changelog.239874' at 4.'
+
+Known fix is to set the index of the current master logfile to a non corrupted one, as detailed by the [RDS documentation](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql_rds_next_master_log.html) itself. The high-level command RDS offers, however, doesn't do squat in our situation and I can only speculate as to why. I suspect that our former master died without being fully replicated to the standy replica, so the logfile being replicated residing in the standby replica has a different size than the master's. Thus, when we fail-overed and made the standby replica the new master, both read replicas were trying to read a position in the logfile that doesn't exist. So just resetting the logfile index wasn't enough; we needed to reset the position in the logfile as well. Too bad, there has not been an RDS command to do that while we obviously don't have shell access to do it ourselves. If my speculation is correct, it means that the redundancy feature from RDS has undermined its own HA. Amazon called on Tuesday, about 35 hours after the meltdown, to offer their support but at that point they might as well have offered their condolences. 
+
+- Sometimes there is just no correct solution. You have to go with your guts and live to fight another day. The obvious solution for our problem is to either `ALTER TABLE` and change the column definition in the offending table to BIGINT or at least just drop that column altogether if it's not a foreign key. There is but one problem with that plan. Both operations are extremely expensive, according to [MySQL doc](https://dev.mysql.com/doc/refman/5.6/en/innodb-create-index-overview.html), and nobody know how long it will take or what the implication is under normal production load, factoring into RDS' lack of transparency. [Rumour has it](http://dba.stackexchange.com/a/112834) that it can take up to a month and it is definitely not smooth sailing either. So we had to stich up multiple hacks at the application layer to at least buy time while working on a manual migration, which brings me to the next section.
+
+## 2. Entrepreneurship lessons
+
+You know that dramatic scene from the Social Network featuring Mark Zuckerberg screaming at Eduardo Saverin for freezing their account and therefore causing Facebook to suffer from downtime? It speaks volume about the cut-throat competition in the world of consumer web and the high expectation of our generation of digital natives. Downtime is not acceptable if you want to survive. Period. And yet we were down for two long hours. That was when we made the decision to cut-off the arm to save the body by disabling a few functionalities from the web application to resurrect it on limited functionality for the time being and thereby keep the mobile apps alive. It's understandable to have these moments when the company is growing and I had lived through my fair share of them prior to last Sunday but it never got easier. On the contrary, the more users we have, the more platforms we support, the more impact such decisions bear, the heavier disappointment manifests. But it sums up life at a startup nicely; the high is incredible while the low is almost unfathomable. The only thing you can do is take a deep breath, make hard chocies and march on. 
+
+There is also one more thing I learnt about startup through this incident. The people are important, more so in crisis than in normal day-to-day operation. As crisis is an inevitable price for growth, you don't want to get stuck in a crisis with people you don't like or leaders you don't approve of. And this is where I'm immensely grateful. I'm grateful to be working with amazing people whom I dearly love from the bottom of my heart.
+
+## 3. Personal lessons
+
+Last week was strange. While the situation was definitely horrible and stressful, I enjoyed the experience because my spirit was definitely at its peak in months. In fact, as I have been losing motivation at work for quite a while, the incident reminded me again why I love my job so much eventhough most of the time I feel like I'm not smart enough. I love solving problem. I love the adrenaline rush when trying to make things work. Above it all, I love the laser-sharp focus with a clearly defined goal in front of me. And for that, I'm grateful.
+
+
