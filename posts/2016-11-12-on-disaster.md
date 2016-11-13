@@ -1,5 +1,5 @@
 ---
-title: On disaster: what doesn't kill you make you grateful
+title: On disaster - what doesn't kill you make you grateful
 tags: tech, disaster, work
 ---
 
