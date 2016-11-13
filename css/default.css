@@ -71,3 +71,8 @@ code[class*="language-"],
 pre[class*="language-"] {
     font-size: 80%;
 }
+
+blockquote + p,
+p + p {
+  text-indent: 0;
+}
