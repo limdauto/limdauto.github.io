@@ -74,5 +74,5 @@ pre[class*="language-"] {
 
 blockquote + p,
 p + p {
-  text-indent: 0; /* indent subsequent paragraphs */
+  text-indent: 0 !important; /* indent subsequent paragraphs */
 }
